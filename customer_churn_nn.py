@@ -111,20 +111,38 @@ classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = [
 classifier.fit(X_train,y_train, batch_size = 10, epochs = 100)
 
 
-# In[108]:
-
-
-# Step 7: Make Predictions
-for layers in classifier.layers:
-    weights = layers.get_weights()
-
-
-# In[118]:
+# In[119]:
 
 
 # shape of weights
 for elements in classifier.get_weights():
     print(elements.shape)
+
+
+# In[147]:
+
+
+# Step 7: Make Predictions
+y_pred = classifier.predict(X_test)
+# y_pred is probabolity --> convert it into class prediction to get y_pred_2 
+y_pred_2 = pd.DataFrame(y_pred).apply(lambda row: 1 if row[0]>0.5 else 0, axis = 1)
+
+
+# In[151]:
+
+
+# Step 8: Accuracy
+import sklearn.metrics as metrics
+print(f'accuracy: {metrics.accuracy_score(y_test, y_pred_2)}')
+print(f'f1_score: {metrics.f1_score(y_test, y_pred_2)}')
+print(f'precision: {metrics.precision_score(y_test, y_pred_2)}')
+print(f'recall: {metrics.recall_score(y_test, y_pred_2)}')
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
