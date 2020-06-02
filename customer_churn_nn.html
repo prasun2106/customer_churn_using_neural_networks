@@ -13076,7 +13076,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13091,7 +13091,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Step 1: Import and Preprocessing</span>
@@ -13108,7 +13108,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[88]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13124,7 +13124,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[88]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -13238,7 +13238,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
@@ -13254,7 +13254,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[89]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -13281,7 +13281,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">columns</span>
@@ -13297,7 +13297,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[90]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13316,7 +13316,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">one_hot_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span>  <span class="p">[</span><span class="s1">&#39;CreditScore&#39;</span><span class="p">,</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span><span class="s1">&#39;Balance&#39;</span><span class="p">,</span> <span class="s1">&#39;EstimatedSalary&#39;</span><span class="p">]]</span>
@@ -13329,7 +13329,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">one_hot_columns</span><span class="p">)</span>
@@ -13342,7 +13342,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Convert Ag in buckets</span>
@@ -13356,7 +13356,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">])</span>
@@ -13369,7 +13369,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
@@ -13384,7 +13384,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Feature Scaling</span>
@@ -13399,7 +13399,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># There are two ways of initializing a neiral network:</span>
@@ -13429,7 +13429,7 @@ dtype: int64</pre>
 <span class="n">classifier</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span> <span class="o">=</span> <span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span> <span class="o">=</span> <span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
 
 <span class="c1"># Step 6: Fit the model:</span>
-<span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">epochs</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13446,219 +13446,39 @@ dtype: int64</pre>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Epoch 1/100
-7500/7500 [==============================] - 4s 539us/step - loss: 0.4088 - accuracy: 0.8327
-Epoch 2/100
-7500/7500 [==============================] - 1s 169us/step - loss: 0.3551 - accuracy: 0.8547
-Epoch 3/100
-7500/7500 [==============================] - 1s 178us/step - loss: 0.3488 - accuracy: 0.8577
-Epoch 4/100
-7500/7500 [==============================] - 1s 188us/step - loss: 0.3449 - accuracy: 0.8592
-Epoch 5/100
-7500/7500 [==============================] - 1s 184us/step - loss: 0.3427 - accuracy: 0.8588
-Epoch 6/100
-7500/7500 [==============================] - 1s 156us/step - loss: 0.3397 - accuracy: 0.8601
-Epoch 7/100
-7500/7500 [==============================] - 1s 155us/step - loss: 0.3378 - accuracy: 0.8601
-Epoch 8/100
-7500/7500 [==============================] - 1s 161us/step - loss: 0.3360 - accuracy: 0.8599
-Epoch 9/100
-7500/7500 [==============================] - 1s 162us/step - loss: 0.3335 - accuracy: 0.8629
-Epoch 10/100
-7500/7500 [==============================] - 1s 159us/step - loss: 0.3321 - accuracy: 0.8631
-Epoch 11/100
-7500/7500 [==============================] - 1s 161us/step - loss: 0.3298 - accuracy: 0.8640
-Epoch 12/100
-7500/7500 [==============================] - 1s 161us/step - loss: 0.3292 - accuracy: 0.8643
-Epoch 13/100
-7500/7500 [==============================] - 1s 160us/step - loss: 0.3279 - accuracy: 0.8648
-Epoch 14/100
-7500/7500 [==============================] - 1s 162us/step - loss: 0.3257 - accuracy: 0.8635
-Epoch 15/100
-7500/7500 [==============================] - 2s 212us/step - loss: 0.3233 - accuracy: 0.8645
-Epoch 16/100
-7500/7500 [==============================] - 1s 175us/step - loss: 0.3227 - accuracy: 0.8657
-Epoch 17/100
-7500/7500 [==============================] - 1s 170us/step - loss: 0.3202 - accuracy: 0.8677
-Epoch 18/100
-7500/7500 [==============================] - 1s 176us/step - loss: 0.3208 - accuracy: 0.8660
-Epoch 19/100
-7500/7500 [==============================] - 1s 186us/step - loss: 0.3191 - accuracy: 0.8703
-Epoch 20/100
-7500/7500 [==============================] - 1s 178us/step - loss: 0.3180 - accuracy: 0.8680
-Epoch 21/100
-7500/7500 [==============================] - 1s 175us/step - loss: 0.3174 - accuracy: 0.8671
-Epoch 22/100
-7500/7500 [==============================] - 2s 203us/step - loss: 0.3170 - accuracy: 0.8683
-Epoch 23/100
-7500/7500 [==============================] - 1s 180us/step - loss: 0.3153 - accuracy: 0.8677
-Epoch 24/100
-7500/7500 [==============================] - 1s 196us/step - loss: 0.3142 - accuracy: 0.8697
-Epoch 25/100
-7500/7500 [==============================] - 1s 176us/step - loss: 0.3141 - accuracy: 0.8687
-Epoch 26/100
-7500/7500 [==============================] - 1s 172us/step - loss: 0.3135 - accuracy: 0.8677
-Epoch 27/100
-7500/7500 [==============================] - 1s 175us/step - loss: 0.3119 - accuracy: 0.8720
-Epoch 28/100
-7500/7500 [==============================] - 1s 184us/step - loss: 0.3112 - accuracy: 0.8703
-Epoch 29/100
-7500/7500 [==============================] - 1s 187us/step - loss: 0.3102 - accuracy: 0.8684
-Epoch 30/100
-7500/7500 [==============================] - 1s 174us/step - loss: 0.3097 - accuracy: 0.8697
-Epoch 31/100
-7500/7500 [==============================] - 1s 197us/step - loss: 0.3092 - accuracy: 0.8681
-Epoch 32/100
-7500/7500 [==============================] - 1s 192us/step - loss: 0.3072 - accuracy: 0.8712
-Epoch 33/100
-7500/7500 [==============================] - 2s 201us/step - loss: 0.3078 - accuracy: 0.8725
-Epoch 34/100
-7500/7500 [==============================] - 2s 228us/step - loss: 0.3069 - accuracy: 0.8681
-Epoch 35/100
-7500/7500 [==============================] - 1s 173us/step - loss: 0.3055 - accuracy: 0.8703
-Epoch 36/100
-7500/7500 [==============================] - 1s 198us/step - loss: 0.3056 - accuracy: 0.8716
-Epoch 37/100
-7500/7500 [==============================] - 1s 171us/step - loss: 0.3040 - accuracy: 0.8725
-Epoch 38/100
-7500/7500 [==============================] - 1s 166us/step - loss: 0.3043 - accuracy: 0.8733
-Epoch 39/100
-7500/7500 [==============================] - 1s 165us/step - loss: 0.3025 - accuracy: 0.8724
-Epoch 40/100
-7500/7500 [==============================] - 1s 192us/step - loss: 0.3014 - accuracy: 0.8724
-Epoch 41/100
-7500/7500 [==============================] - 1s 197us/step - loss: 0.3017 - accuracy: 0.8747
-Epoch 42/100
-7500/7500 [==============================] - 2s 202us/step - loss: 0.3010 - accuracy: 0.8728
-Epoch 43/100
-7500/7500 [==============================] - 2s 205us/step - loss: 0.2994 - accuracy: 0.8737
-Epoch 44/100
-7500/7500 [==============================] - 1s 178us/step - loss: 0.2992 - accuracy: 0.8740
-Epoch 45/100
-7500/7500 [==============================] - 1s 168us/step - loss: 0.2980 - accuracy: 0.8757
-Epoch 46/100
-7500/7500 [==============================] - 1s 167us/step - loss: 0.2988 - accuracy: 0.8740
-Epoch 47/100
-7500/7500 [==============================] - 1s 169us/step - loss: 0.2973 - accuracy: 0.8751
-Epoch 48/100
-7500/7500 [==============================] - 1s 165us/step - loss: 0.2977 - accuracy: 0.8764
-Epoch 49/100
-7500/7500 [==============================] - 1s 167us/step - loss: 0.2965 - accuracy: 0.8725
-Epoch 50/100
-7500/7500 [==============================] - 1s 171us/step - loss: 0.2965 - accuracy: 0.8752
-Epoch 51/100
-7500/7500 [==============================] - 1s 168us/step - loss: 0.2952 - accuracy: 0.8788
-Epoch 52/100
-7500/7500 [==============================] - 1s 169us/step - loss: 0.2956 - accuracy: 0.8744
-Epoch 53/100
-7500/7500 [==============================] - 1s 170us/step - loss: 0.2956 - accuracy: 0.8757
-Epoch 54/100
-7500/7500 [==============================] - 1s 164us/step - loss: 0.2945 - accuracy: 0.8747
-Epoch 55/100
-7500/7500 [==============================] - 1s 165us/step - loss: 0.2928 - accuracy: 0.8776
-Epoch 56/100
-7500/7500 [==============================] - 1s 159us/step - loss: 0.2932 - accuracy: 0.8797
-Epoch 57/100
-7500/7500 [==============================] - 1s 157us/step - loss: 0.2926 - accuracy: 0.8768
-Epoch 58/100
-7500/7500 [==============================] - 1s 158us/step - loss: 0.2928 - accuracy: 0.8747
-Epoch 59/100
-7500/7500 [==============================] - 1s 161us/step - loss: 0.2921 - accuracy: 0.8765
-Epoch 60/100
-7500/7500 [==============================] - 1s 160us/step - loss: 0.2917 - accuracy: 0.8792
-Epoch 61/100
-7500/7500 [==============================] - 1s 159us/step - loss: 0.2909 - accuracy: 0.8773
-Epoch 62/100
-7500/7500 [==============================] - 1s 159us/step - loss: 0.2906 - accuracy: 0.8789
-Epoch 63/100
-7500/7500 [==============================] - 1s 160us/step - loss: 0.2898 - accuracy: 0.8779
-Epoch 64/100
-7500/7500 [==============================] - 1s 162us/step - loss: 0.2896 - accuracy: 0.8796
-Epoch 65/100
-7500/7500 [==============================] - 1s 160us/step - loss: 0.2890 - accuracy: 0.8801
-Epoch 66/100
-7500/7500 [==============================] - 1s 161us/step - loss: 0.2887 - accuracy: 0.8791
-Epoch 67/100
-7500/7500 [==============================] - 1s 164us/step - loss: 0.2892 - accuracy: 0.8784
-Epoch 68/100
-7500/7500 [==============================] - 1s 166us/step - loss: 0.2872 - accuracy: 0.8775
-Epoch 69/100
-7500/7500 [==============================] - 1s 167us/step - loss: 0.2874 - accuracy: 0.8793
-Epoch 70/100
-7500/7500 [==============================] - 1s 159us/step - loss: 0.2874 - accuracy: 0.8801
-Epoch 71/100
-7500/7500 [==============================] - 1s 156us/step - loss: 0.2869 - accuracy: 0.8799
-Epoch 72/100
-7500/7500 [==============================] - 1s 162us/step - loss: 0.2857 - accuracy: 0.8811
-Epoch 73/100
-7500/7500 [==============================] - 1s 161us/step - loss: 0.2862 - accuracy: 0.8801
-Epoch 74/100
-7500/7500 [==============================] - 1s 159us/step - loss: 0.2848 - accuracy: 0.8819
-Epoch 75/100
-7500/7500 [==============================] - 1s 159us/step - loss: 0.2852 - accuracy: 0.8813
-Epoch 76/100
-7500/7500 [==============================] - 1s 165us/step - loss: 0.2851 - accuracy: 0.8824
-Epoch 77/100
-7500/7500 [==============================] - 1s 161us/step - loss: 0.2842 - accuracy: 0.8827
-Epoch 78/100
-7500/7500 [==============================] - 1s 162us/step - loss: 0.2844 - accuracy: 0.8815
-Epoch 79/100
-7500/7500 [==============================] - 1s 158us/step - loss: 0.2826 - accuracy: 0.8808
-Epoch 80/100
-7500/7500 [==============================] - 1s 162us/step - loss: 0.2843 - accuracy: 0.8809
-Epoch 81/100
-7500/7500 [==============================] - 1s 160us/step - loss: 0.2826 - accuracy: 0.8823
-Epoch 82/100
-7500/7500 [==============================] - 1s 162us/step - loss: 0.2819 - accuracy: 0.8813
-Epoch 83/100
-7500/7500 [==============================] - 1s 157us/step - loss: 0.2816 - accuracy: 0.8848
-Epoch 84/100
-7500/7500 [==============================] - 1s 164us/step - loss: 0.2820 - accuracy: 0.8836
-Epoch 85/100
-7500/7500 [==============================] - 1s 163us/step - loss: 0.2807 - accuracy: 0.8843
-Epoch 86/100
-7500/7500 [==============================] - 1s 183us/step - loss: 0.2801 - accuracy: 0.8852
-Epoch 87/100
-7500/7500 [==============================] - 1s 166us/step - loss: 0.2806 - accuracy: 0.8823
-Epoch 88/100
-7500/7500 [==============================] - 1s 164us/step - loss: 0.2795 - accuracy: 0.8836
-Epoch 89/100
-7500/7500 [==============================] - 1s 160us/step - loss: 0.2802 - accuracy: 0.8820
-Epoch 90/100
-7500/7500 [==============================] - 1s 162us/step - loss: 0.2790 - accuracy: 0.8825
-Epoch 91/100
-7500/7500 [==============================] - 1s 165us/step - loss: 0.2784 - accuracy: 0.8829
-Epoch 92/100
-7500/7500 [==============================] - 1s 161us/step - loss: 0.2787 - accuracy: 0.8843
-Epoch 93/100
-7500/7500 [==============================] - 1s 160us/step - loss: 0.2781 - accuracy: 0.8827
-Epoch 94/100
-7500/7500 [==============================] - 1s 156us/step - loss: 0.2784 - accuracy: 0.8851
-Epoch 95/100
-7500/7500 [==============================] - 1s 159us/step - loss: 0.2770 - accuracy: 0.8848
-Epoch 96/100
-7500/7500 [==============================] - 1s 159us/step - loss: 0.2781 - accuracy: 0.8837
-Epoch 97/100
-7500/7500 [==============================] - 1s 157us/step - loss: 0.2768 - accuracy: 0.8841
-Epoch 98/100
-7500/7500 [==============================] - 1s 160us/step - loss: 0.2779 - accuracy: 0.8847
-Epoch 99/100
-7500/7500 [==============================] - 1s 171us/step - loss: 0.2761 - accuracy: 0.8831
-Epoch 100/100
-7500/7500 [==============================] - 1s 179us/step - loss: 0.2759 - accuracy: 0.8853
+<pre>Epoch 1/10
+7500/7500 [==============================] - 2s 211us/step - loss: 0.4166 - accuracy: 0.8027
+Epoch 2/10
+7500/7500 [==============================] - 1s 165us/step - loss: 0.3735 - accuracy: 0.8523
+Epoch 3/10
+7500/7500 [==============================] - 1s 164us/step - loss: 0.3647 - accuracy: 0.8593
+Epoch 4/10
+7500/7500 [==============================] - 1s 168us/step - loss: 0.3596 - accuracy: 0.8616
+Epoch 5/10
+7500/7500 [==============================] - 1s 164us/step - loss: 0.3533 - accuracy: 0.8613
+Epoch 6/10
+7500/7500 [==============================] - 1s 167us/step - loss: 0.3480 - accuracy: 0.8640
+Epoch 7/10
+7500/7500 [==============================] - 1s 166us/step - loss: 0.3426 - accuracy: 0.8644
+Epoch 8/10
+7500/7500 [==============================] - 1s 171us/step - loss: 0.3365 - accuracy: 0.8659
+Epoch 9/10
+7500/7500 [==============================] - 1s 164us/step - loss: 0.3341 - accuracy: 0.8663
+Epoch 10/10
+7500/7500 [==============================] - 1s 164us/step - loss: 0.3303 - accuracy: 0.8681
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[105]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;keras.callbacks.callbacks.History at 0x211ab1037c8&gt;</pre>
+<pre>&lt;keras.callbacks.callbacks.History at 0x21adc4dba88&gt;</pre>
 </div>
 
 </div>
@@ -13669,7 +13489,7 @@ Epoch 100/100
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># shape of weights</span>
@@ -13707,7 +13527,7 @@ Epoch 100/100
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[147]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Step 7: Make Predictions</span>
@@ -13723,7 +13543,7 @@ Epoch 100/100
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[151]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Step 8: Accuracy</span>
@@ -13748,10 +13568,10 @@ Epoch 100/100
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>accuracy: 0.8448
-f1_score: 0.5580865603644646
-precision: 0.6786703601108033
-recall: 0.4738878143133462
+<pre>accuracy: 0.8424
+f1_score: 0.5135802469135803
+precision: 0.7027027027027027
+recall: 0.4046692607003891
 </pre>
 </div>
 </div>
@@ -13760,15 +13580,124 @@ recall: 0.4738878143133462
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Step-9:-Evaluating-the-ANN:">Step 9: Evaluating the ANN:<a class="anchor-link" href="#Step-9:-Evaluating-the-ANN:">&#182;</a></h1><p>Judging our models's performance on one accuracy and one test set is not the best way to evaluate the model. Changing the test set will change the accuracy of our model slightly. To curb this issue, we will use k-fold cross validation.</p>
+<p><img src="images/cv.png" alt="&#39;cv&#39;"></p>
+<h3 id="Cross-validation-steps:">Cross validation steps:<a class="anchor-link" href="#Cross-validation-steps:">&#182;</a></h3><ol>
+<li>Train on k-1 folds</li>
+<li>Test on remaining one</li>
+<li>Take mean of all k accuracies</li>
+<li>Find standard deviation of all accuracies</li>
+<li>Based on accuracy and standard deviations, we can see which of the following cases our model satisfies:</li>
+</ol>
+<p><img src="images/bias_variance.JPG" alt="&#39;bias_variance&#39;"></p>
+<h3 id="Implementation-steps:">Implementation steps:<a class="anchor-link" href="#Implementation-steps:">&#182;</a></h3><ol>
+<li>cross_val_score is sklearn function</li>
+<li>create a keras wrapper for sklearn so that the keras classifier can be used in sklearn cross_val_score</li>
+<li></li>
+</ol>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.wrappers.scikit_learn</span> <span class="kn">import</span> <span class="n">KerasClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># defining the function to be passed to KerasClassifier to convert it to sklearn classifier</span>
+<span class="c1"># only define the nn architecture. training and testing will be done by cross_val_Score</span>
+<span class="k">def</span> <span class="nf">nn_architecture</span><span class="p">():</span>
+    <span class="c1">#initialize</span>
+    <span class="n">classifier</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+    <span class="c1"># add input and first hidden layer</span>
+    <span class="n">classifier</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span> <span class="o">=</span> <span class="mi">19</span><span class="p">,</span> <span class="n">activation</span> <span class="o">=</span> <span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">kernel_initializer</span><span class="o">=</span> <span class="s1">&#39;uniform&#39;</span> <span class="p">,</span> <span class="n">input_dim</span> <span class="o">=</span>  <span class="mi">37</span><span class="p">))</span>
+    <span class="c1"># add second hidden layer</span>
+    <span class="n">classifier</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span> <span class="o">=</span> <span class="mi">19</span><span class="p">,</span> <span class="n">activation</span> <span class="o">=</span> <span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">kernel_initializer</span><span class="o">=</span> <span class="s1">&#39;uniform&#39;</span> <span class="p">))</span>
+    <span class="c1"># add output layer</span>
+    <span class="n">classifier</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">activation</span> <span class="o">=</span> <span class="s1">&#39;sigmoid&#39;</span><span class="p">,</span> <span class="n">kernel_initializer</span><span class="o">=</span> <span class="s1">&#39;uniform&#39;</span><span class="p">))</span>
+    <span class="c1"># compile</span>
+    <span class="n">classifier</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span> <span class="o">=</span> <span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span> <span class="o">=</span> <span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">classifier</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">classifier_2</span> <span class="o">=</span> <span class="n">KerasClassifier</span><span class="p">(</span><span class="n">build_fn</span><span class="o">=</span> <span class="n">nn_architecture</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">nb_epoch</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">accuracies</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">estimator</span> <span class="o">=</span> <span class="n">classifier_2</span><span class="p">,</span><span class="n">X</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span>  <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">avg_accuracy</span> <span class="o">=</span> <span class="n">accuracies</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">std_accuracy</span> <span class="o">=</span> <span class="n">accuracies</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;accuracy = </span><span class="si">{avg_accuracy}</span><span class="s1"> +/- {std_accuracy*100}%&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>accuracy = 0.8501333355903625 +/- 1.076949500305303%
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
