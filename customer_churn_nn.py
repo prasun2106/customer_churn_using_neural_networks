@@ -62,7 +62,7 @@ X['Age'] = pd.cut(X['Age'], 10)
 X = pd.get_dummies(X,columns = ['Age'])
 
 
-# In[11]:
+# In[10]:
 
 
 from sklearn.preprocessing import StandardScaler
@@ -70,7 +70,7 @@ scaler = StandardScaler()
 X = pd.DataFrame(scaler.fit_transform(X),columns = X.columns)
 
 
-# In[12]:
+# In[11]:
 
 
 # Feature Scaling
@@ -78,7 +78,7 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y)
 
 
-# In[17]:
+# In[26]:
 
 
 # There are two ways of initializing a neiral network:
@@ -93,42 +93,42 @@ from keras.models import Sequential
 from keras.layers import Dense
 
 # Step 3: Initialize
-classifier = Sequential()
+classifier_initial = Sequential()
 
 # Step 4: Add layers
 
 # Input layer (designated by input_dim = 11) and first hidden layer
-classifier.add(Dense(units = 19 , kernel_initializer = 'uniform', activation = 'relu', input_dim = 37))
+classifier_initial.add(Dense(units = 19 , kernel_initializer = 'uniform', activation = 'relu', input_dim = 37))
 # second hidden layer
-classifier.add(Dense(units = 19 , kernel_initializer = 'uniform', activation = 'relu'))
+classifier_initial.add(Dense(units = 19 , kernel_initializer = 'uniform', activation = 'relu'))
 # output layer
-classifier.add(Dense(units = 1 , kernel_initializer = 'uniform', activation = 'sigmoid'))
+classifier_initial.add(Dense(units = 1 , kernel_initializer = 'uniform', activation = 'sigmoid'))
 
 # Step 5: compile ann - apply stochastic gradient descent
-classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
+classifier_initial.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
 # Step 6: Fit the model:
-classifier.fit(X_train,y_train, batch_size = 10, epochs = 10)
+classifier_initial.fit(X_train,y_train, batch_size = 10, epochs = 10)
 
 
-# In[14]:
+# In[27]:
 
 
 # shape of weights
-for elements in classifier.get_weights():
+for elements in classifier_initial.get_weights():
     print(elements.shape)
 
 
-# In[15]:
+# In[28]:
 
 
 # Step 7: Make Predictions
-y_pred = classifier.predict(X_test)
+y_pred = classifier_initial.predict(X_test)
 # y_pred is probabolity --> convert it into class prediction to get y_pred_2 
 y_pred_2 = pd.DataFrame(y_pred).apply(lambda row: 1 if row[0]>0.5 else 0, axis = 1)
 
 
-# In[16]:
+# In[29]:
 
 
 # Step 8: Accuracy
@@ -159,14 +159,14 @@ print(f'recall: {metrics.recall_score(y_test, y_pred_2)}')
 # 2. create a keras wrapper for sklearn so that the keras classifier can be used in sklearn cross_val_score
 # 3. 
 
-# In[18]:
+# In[16]:
 
 
 from keras.wrappers.scikit_learn import KerasClassifier
 from sklearn.model_selection import cross_val_score
 
 
-# In[26]:
+# In[17]:
 
 
 # defining the function to be passed to KerasClassifier to convert it to sklearn classifier
@@ -185,25 +185,136 @@ def nn_architecture():
     return classifier
 
 
-# In[32]:
+# In[18]:
 
 
 classifier_2 = KerasClassifier(build_fn= nn_architecture, batch_size = 10, nb_epoch = 100)
 
 
-# In[35]:
+# In[19]:
 
 
 accuracies = cross_val_score(estimator = classifier_2,X = X_train, y =  y_train, cv = 10, n_jobs=-1)
 
 
-# In[39]:
+# In[20]:
 
 
 avg_accuracy = accuracies.mean()
 std_accuracy = accuracies.std()
 
 print(f'accuracy = {avg_accuracy*100:.2f}% +/- {std_accuracy*100:.2f}%')
+
+
+# # Step 10: Improving Accuracy
+# 1. Dropout Regularisation
+# 2. Hyper parametric tuning
+
+# In[39]:
+
+
+from keras.layers import Dropout
+#nn architecture with dropouts
+def nn_architecture_2():
+    classifier = Sequential()
+    # add layers with dropout regularization
+    classifier.add(Dense(units = 19, activation = 'relu', kernel_initializer = 'uniform', input_dim = 37))
+    classifier.add(Dropout(rate = 0.1))
+    classifier.add(Dense(units = 19, activation = 'relu', kernel_initializer = 'uniform'))
+    classifier.add(Dropout(rate = 0.1))
+    classifier.add(Dense(units = 1, activation = 'sigmoid', kernel_initializer = 'uniform'))
+
+    # compile
+    classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
+    
+    return classifier
+# cross validation
+classifier_wrapper = KerasClassifier(build_fn = nn_architecture_2, batch_size = 10, nb_epoch = 100)
+accuracies_dropout = cross_val_score(estimator=classifier_wrapper, X = X_train, y = y_train, cv = 10)
+
+
+# In[ ]:
+
+
+
+
+
+# In[40]:
+
+
+# print(f'training set initital accuracy: {metrics.accuracy_score(y_train, classifier_initial(X_train))}')
+print(f'test set initital accuracy: {metrics.accuracy_score(y_test, y_pred_2)}')
+print(f'cross validation accuracy: {avg_accuracy}')
+print(f'training set accuracy after dropout regularisation: {accuracies_dropout.mean()}')
+
+
+# In[41]:
+
+
+accuracies.mean()
+
+
+# ### Hyperparametric tuning
+
+# In[55]:
+
+
+def nn_architecture_3(optimizer):
+    classifier = Sequential()
+    # add layers with dropout regularization
+    classifier.add(Dense(units = 19, activation = 'relu', kernel_initializer = 'uniform', input_dim = 37))
+    classifier.add(Dropout(rate = 0.1))
+    classifier.add(Dense(units = 19, activation = 'relu', kernel_initializer = 'uniform'))
+    classifier.add(Dropout(rate = 0.1))
+    classifier.add(Dense(units = 1, activation = 'sigmoid', kernel_initializer = 'uniform'))
+
+    # compile
+    classifier.compile(optimizer = optimizer, loss = 'binary_crossentropy', metrics = ['accuracy'])
+    
+    return classifier
+
+
+# In[59]:
+
+
+from sklearn.model_selection import GridSearchCV
+classifier = KerasClassifier(build_fn=nn_architecture_3) #dont add batch_size and nb_epochs as we will find them using grid_search
+parameters = {'batch_size': [25,32],
+             'nb_epoch':[100,500],
+             'optimizer':['adam','rmsprop']}
+
+
+# In[60]:
+
+
+grid_search = GridSearchCV(estimator= classifier, param_grid= parameters, 
+                          scoring = 'accuracy',
+                          cv = 10)
+
+
+# In[61]:
+
+
+grid_search = grid_search.fit(X_train, y_train)
+
+
+# In[63]:
+
+
+best_param = grid_search.best_params_
+best_accuracy = grid_search.best_score_
+
+
+# In[64]:
+
+
+best_param
+
+
+# In[65]:
+
+
+best_accuracy
 
 
 # In[ ]:
